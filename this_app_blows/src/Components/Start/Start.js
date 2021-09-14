@@ -9,7 +9,7 @@ function Start() {
       <div className="start-text">
         <h1>Bramblers Start Time 9:00am</h1>
         <img src={pic1} alt="bramblers" className="coursePics"></img>
-        <GetWeather town="Portsmouth" />
+        <GetWeather town={"Portsmouth"} />
       </div>
     </div>
   );
