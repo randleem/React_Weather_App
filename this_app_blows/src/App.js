@@ -11,7 +11,7 @@ function App() {
         <Route path="/start">
           <Start />
         </Route>
-        <h1>hello</h1>
+        <h1>Welcome to the Bramblers Trailwalker Weather App</h1>
         <Route path="/cp1"></Route>
         <Route path="/cp2"></Route>
         <Route path="/cp3"></Route>

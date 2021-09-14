@@ -6,6 +6,10 @@ function GetWeather(props) {
   const [getWeather, setGetWeather] = useState(true);
   const [currentTemperature, setCurrentTemperature] = useState(null);
   const [currentCondition, setCurrentCondition] = useState(null);
+  const [getFutureWeather, setGetFutureWeather] = useState(true);
+  const [futureTemperature, setFutureTemperature] = useState(null);
+  const [futureCondition, setFutureCondition] = useState(null);
+  const [numberHoursAhead, setNumberHoursAhead] = useState(null);
 
   useEffect(() => {
     if (getWeather) {
@@ -23,10 +27,28 @@ function GetWeather(props) {
     }
   }, [getWeather]);
 
+  useEffect(() => {
+    if (getFutureWeather) {
+      async function fetchWeather() {
+        const res = await fetch(
+          `http://api.weatherapi.com/v1/forecast.json?key=319365db56c948a9aeb160554211409&q=${town}&days=2&aqi=no&alerts=no`
+        );
+        const data = await res.json();
+        console.log(data.forecast.forecastday[0]);
+      }
+      fetchWeather();
+      setGetFutureWeather(false);
+    }
+  }, [getFutureWeather]);
+
   return (
-    <div className="GetWeather-container">
-      <div className="GetWeather-text">
+    <div className="get-weather-container">
+      <div className="get-weather-text">
         Its currently {currentCondition} and {currentTemperature}&deg;C
+      </div>
+      <div className="future-weather-container">
+        In {numberHoursAhead} hour it will be {futureCondition} and{" "}
+        {futureTemperature}&deg;C
       </div>
     </div>
   );
