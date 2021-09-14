@@ -1,0 +1,11 @@
+.App {
+  text-align: center;
+}
+
+/* Moile Phone Screens Pixel 411px */
+@media screen and (max-width: 480px) {
+  .coursePics {
+    max-width: 400px;
+    height: auto;
+  }
+}
