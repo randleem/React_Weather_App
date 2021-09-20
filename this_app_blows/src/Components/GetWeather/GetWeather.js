@@ -46,6 +46,15 @@ function GetWeather(props) {
       <div className="get-weather-text">
         Its currently {currentCondition} and {currentTemperature}&deg;C
       </div>
+      <h1>Check weather in </h1>
+      <div className="dropdown-menu-container">
+        <div className="dropdown-holder">Check weather in </div>
+        <div className="dropdown-items-container">
+          <div className="dropdown-items">1 hour</div>
+          <div className="dropdown-items">2 hours</div>
+          <div className="dropdown-items">3 hours</div>
+        </div>
+      </div>
       <div className="future-weather-container">
         In {numberHoursAhead} hour it will be {futureCondition} and{" "}
         {futureTemperature}&deg;C
